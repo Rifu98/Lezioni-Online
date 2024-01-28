@@ -1,0 +1,107 @@
+
+<div class="authpage">
+    <div class="authcontainer">
+        <div class="nosocial">
+            <div class="login">
+                <h2>Hai un account?</h2>
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h1>Accedi</h1>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>I campi contrassegnati con * sono obbligatori</p>
+                        <form [formGroup]="loginform" (ngSubmit)="onSubmitlogin()">
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="pat@example.com" formControlName="mail">
+                                <mat-error *ngIf="!loginform.get('mail')!.valid">{{getErrorMessageLogin()}}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Password</mat-label>
+                                <input matInput [type]="hideloginpass ? 'password' : 'text'" formControlName="pass">
+                                <button mat-icon-button matSuffix (click)="hideloginpass = !hideloginpass" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideloginpass">
+                                    <mat-icon>{{hideloginpass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="!loginform.get('mail')!.valid">{{getErrorMessageLoginPass()}}</mat-error>
+                            </mat-form-field>
+                            <button mat-raised-button color="primary" [disabled]="!loginform.valid" type="submit">Accedi</button>
+                        </form>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="signup">
+                <h2>Non hai un account?</h2>
+                <mat-accordion>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h1>Registrati</h1>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>I campi contrassegnati con * sono obbligatori</p>
+                        <form [formGroup]="signupform" (ngSubmit)="onSubmitsignup()">
+                            <mat-form-field>
+                                <mat-label>Nome</mat-label>
+                                <input matInput placeholder="Esempio: Luca" formControlName="nome">
+                                <mat-error *ngIf="!signupform.get('nome')!.valid">Errore nell'inserimento</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Cognome</mat-label>
+                                <input matInput placeholder="Esempio: Rossi" formControlName="cognome">
+                                <mat-error *ngIf="!signupform.get('cognome')!.valid">Errore nell'inserimento</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Inserisci la tua email</mat-label>
+                                <input matInput placeholder="pat@example.com" formControlName="mail">
+                                <mat-error *ngIf="!signupform.get('pass')!.valid">{{getErrorMessageSignup()}}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Inserisci una password</mat-label>
+                                <input matInput [type]="hidesignuppass ? 'password' : 'text'" formControlName="pass">
+                                <button mat-icon-button matSuffix (click)="hidesignuppass = !hidesignuppass" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidesignuppass">
+                                    <mat-icon>{{hidesignuppass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="!signupform.get('pass')!.valid || signupform.hasError('differentPass')">{{getErrorMessagepass()}}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Conferma la password</mat-label>
+                                <input matInput [type]="hidesignuppass2 ? 'password' : 'text'" formControlName="pass2">
+                                <button mat-icon-button matSuffix (click)="hidesignuppass2 = !hidesignuppass2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidesignuppass2">
+                                    <mat-icon>{{hidesignuppass2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="!signupform.get('pass2')!.valid">{{getErrorMessagepass2()}}</mat-error>
+                            </mat-form-field>
+                            <mat-error *ngIf="signupform.hasError('differentPass')">Le password non coincidono</mat-error>
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!signupform.valid">Registrati</button>
+                        </form>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <h2>Entra tramite social</h2>
+        <div class="social">
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="pill"
+                 data-theme="filled_blue"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="g_id_onload"
+     data-client_id="908028603275-ao1q3kp0hvh2ov8qdfm4n8uj0uv06r2l.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="redirect"
+     data-login_uri="https://serverlezioni.cloud:3000/signupgoogle"
+     data-auto_select="true"
+     data-itp_support="true">
+</div>
+

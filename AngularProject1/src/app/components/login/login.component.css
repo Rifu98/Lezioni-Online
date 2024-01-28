@@ -1,0 +1,66 @@
+
+h1 {
+  font-family: 'Quicksand', sans-serif;
+  font: bold;
+  color: black;
+  text-align: center;
+  margin-top: 15px;
+}
+
+h2 {
+  margin-bottom: 0px;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+.authpage {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.authcontainer {
+  margin-top: 50px;
+  background-color: rgba(0,0,0, 50%);
+}
+
+.nosocial {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 30px 10px 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-divider {
+    margin: 10px 50px 10px 50px;
+    border-color: black;
+}
+
+button {
+  cursor: pointer;
+}
+
+.g_id_signin {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.social {
+    display:flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+.mat-expansion-panel {
+  background-color: rgba(255, 255, 255, 70%);
+}
+
+.mat-expansion-panel:hover {
+  background-color: rgba(255, 255, 255, 100%);
+}

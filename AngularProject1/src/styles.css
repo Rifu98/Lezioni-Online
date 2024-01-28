@@ -1,0 +1,20 @@
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background-image: url("assets/img/bg.png");
+}
+
+
+
+main {
+  display: flex;
+  align-items: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0;}

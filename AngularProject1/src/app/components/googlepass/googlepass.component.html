@@ -1,0 +1,24 @@
+<div class="bg">
+    <h1>Scegli una password da associare al tuo account</h1>
+
+    <form [formGroup]="loginform" (ngSubmit)="onSubmitlogin()">
+        <mat-form-field>
+            <mat-label>Inserisci una password</mat-label>
+            <input matInput [type]="hidesignuppass ? 'password' : 'text'" formControlName="pass">
+            <button mat-icon-button matSuffix (click)="hidesignuppass = !hidesignuppass" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidesignuppass">
+                <mat-icon>{{hidesignuppass ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="!loginform.get('pass')!.valid || loginform.hasError('differentPass')">{{getErrorMessagepass()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Conferma la password</mat-label>
+            <input matInput [type]="hidesignuppass2 ? 'password' : 'text'" formControlName="pass2">
+            <button mat-icon-button matSuffix (click)="hidesignuppass2 = !hidesignuppass2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidesignuppass2">
+                <mat-icon>{{hidesignuppass2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="!loginform.get('pass2')!.valid">{{getErrorMessagepass2()}}</mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="loginform.hasError('differentPass')">Le password non coincidono</mat-error>
+        <button mat-raised-button color="primary" [disabled]="!loginform.valid" type="submit">Accedi</button>
+    </form>
+</div>

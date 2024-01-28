@@ -1,0 +1,13 @@
+<main>
+    <div class="back" (click) ="goBack()"></div>
+    <div class="proff" [ngStyle] ="transition">
+        <div class="profile">
+            <img [src]="imgurl">
+            <div class="nome" *ngIf="proffs[index].nome != ''">{{proffs[index].nome}} {{proffs[index].cognome}}</div>
+        </div>
+        <div class="materie">
+            <div *ngFor="let materia of proffs[index].materie" class="materia">{{materia}}</div>
+        </div>
+    </div>
+    <div class="next" (click) ="goNext()"></div>
+</main>

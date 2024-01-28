@@ -1,0 +1,27 @@
+mer 15/11/23 16:30 generated
+mer 15/11/23 16:30 last update (all)
+mer 15/11/23 20:45 last update (todo.1.1)
+mer 15/11/23 22:30 last update (todo.1.2)
+
+TASKS:          //NO MORE THINK:
+"SIGN UP"       //how many entrypoints? 2: 1 google 2 signupform
+                //features needed: crypting, mail verif, for entrypoint.1,2
+                //path: 1 entrypoint -> 2 ss alreadyreg? => 2.yes ss mailverif? =>
+                //  #    2.yes.yes -> {alreadyreg landing page}
+                //  #    2.yes.no -> {verifmail landing page}
+                //  #    2.no -> db ||IMPORTANT TO THINK: MORE ERROR HANDLE|| -->
+                //  #    3 xgooglerout askpass then load -> 4 {verifmail landing page}v2
+                //      5 gen uniq link (?) then send --onclick--> 6 ss confirm mail ->
+                //      6 {mail confirmed} -> 7 redirect (home? profile? infof initial intent) -->
+"FIRST LOG IN"  //      8 handle landing page infof usparam (--smoky--)
+      |
+"LOG IN & LOG OUT" will use path.7,8 think
+
+1 did quary reg google -path.2.no B
+  1.1 did quary verif already reg (funct?) -path.2 B
+    1.1.1 to do landing page -path.2.yes.yes F
+  1.2 did quary pass -path.3 B
+2 to do crypting -features.1 B
+  2.1 to do update (if need) all pass quary B
+3 to do quary reg signup -path2.no B
+  3.1 = 1.1 dep or + update B

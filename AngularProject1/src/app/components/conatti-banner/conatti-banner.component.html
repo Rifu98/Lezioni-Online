@@ -1,0 +1,20 @@
+<div class="bg">
+    <h1>Contattaci</h1>
+    <div class="cards">
+        <div class="card" matRipple [matRippleUnbounded]='unbounded' [matRippleCentered]="centered" (click) ="waRedirect()">
+            <h2>WhatsApp</h2>
+            <div class="waicon"></div>
+            <p>Scrivici direttamente su WhatsApp per una risposta immediata</p>
+        </div>
+        <div class="card" matRipple [matRippleUnbounded]='unbounded' [matRippleCentered]="centered" (click)="fbRedirect()">
+            <h2>Facebook/Messanger</h2>
+            <div class="fbicon"></div>
+            <p>Visita i nostri social per rimanere sempre aggiornato</p>
+        </div>
+        <div class="card" matRipple [matRippleUnbounded]='unbounded' [matRippleCentered]="centered" routerLink="/Login">
+            <h2>Live Chat</h2>
+            <div class="lcicon"></div>
+            <p>Accedi/Registrati per usufruire del nostro servizio di live chat</p>
+        </div>
+    </div>
+</div>
